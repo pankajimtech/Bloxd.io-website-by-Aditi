@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>❄️Player⚔️Fights❄️</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <style>
+      body {
+        text-align: center;
+        font-family: "Arial", sans-serif;
+        /* display: flex; */
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: linear-gradient(to right, #0027c1, #ff0000);
+        margin: 0;
+      }
+
+      .container {
+        text-align: center;
+        justify-items: center;
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        width: 90%;
+        max-width: 600px;
+      }
+
+      h1 {
+        font-size: 2em;
+        color: #333;
+      }
+
+      .health-status {
+        display: flex;
+        justify-content: space-between;
+        margin: 20px 0;
+      }
+
+      .player-health {
+        display: flex;
+        align-items: center;
+      }
+
+      .player-icon {
+        width: 50px;
+        /* height: 50px; */
+        margin-right: 10px;
+      }
+
+      .action-buttons {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+      }
+
+      .player-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .player-buttons h2 {
+        margin-bottom: 10px;
+      }
+
+      .action-buttons button {
+        margin: 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        transition: background 0.3s;
+      }
+
+      .action-buttons button:hover {
+        background: #ff7e5f;
+        color: white;
+      }
+
+      #game-log {
+        margin-top: 20px;
+        max-height: 100px;
+        overflow-y: auto;
+        border-top: 1px solid #ddd;
+        padding-top: 10px;
+        background: #f9f9f9;
+        padding: 10px;
+        border-radius: 5px;
+      }
+      .boss {
+        text-align: center;
+        justify-content: center;
+        display: flex;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <a href="index.html"> <img src="bloxdlogoo.png" width="300px" /> </a>
+    </div>
+
+    <!-- navbar -->
+    <div class="">
+      <nav>
+        <ul>
+          <li>
+            <a href="snowindex.html">Home </a>
+          </li>
+          <li>
+            <a href="snowbattlepack.html"> Battle Pack </a>
+          </li>
+          <li>
+            <a
+              href="https://youtube.com/@aditi_k_chauhanbloxd?si=s_htWY43nNczd_6t"
+              style="color: rgb(200, 0, 60)"
+            >
+              Gaming Channel
+            </a>
+          </li>
+          <li>
+            <a href="snowbeluga.html"> Beluga Game </a>
+          </li>
+          <li>
+            <a href="snowindex.html"> LET IT SNOW! </a>
+          </li>
+          <!-- <li>
+            <a href="boxes.html"> 🙂/😡 Boxes </a>
+          </li> -->
+          <li>
+            <a href="dollar.html"> Free Items! </a>
+          </li>
+          <!-- <li>
+            <a href="fight.html"> Player Fights </a>
+          </li> -->
+        </ul>
+      </nav>
+    </div>
+    <br />
+    <div class="boss">
+      <div class="container">
+        <h1>❄️Player Fights❄️</h1>
+        <div class="health-status">
+          <div class="player-health">
+            <div style="padding: 10px">
+              <p id="player1-health">Player 1 Health: 100</p>
+              <p style="padding-left: 2px">❤️</p>
+            </div>
+            <img
+              src="https://skinsmc.org/skinrender/aHR0cHM6Ly9za2luc21jLnMzLnVzLWVhc3QtMi5hbWF6b25hd3MuY29tL2RkMTdjX0lNR183NDQxLnBuZw=="
+              alt="Player 1"
+              class="player-icon"
+            />
+          </div>
+          <div style="color: white"><p>______</p></div>
+          <div class="player-health">
+            <img
+              src="https://skinsmc.org/skinrender/aHR0cHM6Ly9za2luc21jLnMzLnVzLWVhc3QtMi5hbWF6b25hd3MuY29tLzVjYjhmXzIwMjRfMDRfMjhfYm9iLXNraW4tZnJvbS1ibG94ZC1pby0yMjUwMDg1MS5wbmc="
+              alt="Player 2"
+              class="player-icon"
+            />
+            <div style="padding: 10px">
+              <p id="player2-health">Player 2 Health: 100</p>
+              <p style="padding-left: 2px">❤️</p>
+            </div>
+          </div>
+        </div>
+        <div id="game-log"></div>
+        <div class="action-buttons">
+          <div class="player-buttons">
+            <h2 style="padding-right;: 50px">❄️Player 1 Actions❄️</h2>
+            <button
+              data-player="1"
+              data-action="light"
+              onclick="playerAction(1, 'light')"
+            >
+              Light Attack
+            </button>
+            <button
+              data-player="1"
+              data-action="heavy"
+              onclick="playerAction(1, 'heavy')"
+            >
+              Heavy Attack
+            </button>
+            <button
+              data-player="1"
+              data-action="heal"
+              onclick="playerAction(1, 'heal')"
+            >
+              Heal
+            </button>
+          </div>
+          <div class="player-buttons">
+            <h2 style="padding-left: 50px">❄️Player 2 Actions❄️</h2>
+            <button
+              data-player="2"
+              data-action="light"
+              onclick="playerAction(2, 'light')"
+            >
+              Light Attack
+            </button>
+            <button
+              data-player="2"
+              data-action="heavy"
+              onclick="playerAction(2, 'heavy')"
+            >
+              Heavy Attack
+            </button>
+            <button
+              data-player="2"
+              data-action="heal"
+              onclick="playerAction(2, 'heal')"
+            >
+              Heal
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      let player1_health = 100;
+      let player2_health = 100;
+
+      function updateHealth() {
+        document.getElementById(
+          "player1-health"
+        ).innerText = `Player 1 Health: ${player1_health}`;
+        document.getElementById(
+          "player2-health"
+        ).innerText = `Player 2 Health: ${player2_health}`;
+      }
+
+      function logAction(message) {
+        const gameLog = document.getElementById("game-log");
+        gameLog.innerHTML += `<p>${message}</p>`;
+        gameLog.scrollTop = gameLog.scrollHeight;
+      }
+
+      function resetGame() {
+        player1_health = 100;
+        player2_health = 100;
+        document.getElementById("game-log").innerHTML = "";
+        updateHealth();
+      }
+
+      function playerAction(player, action) {
+        let damage, block_damage, healPoints;
+
+        if (action === "light") {
+          damage = Math.floor(Math.random() * 10) + 1;
+          player == 1 ? (player2_health -= damage) : (player1_health -= damage);
+          logAction(
+            `Player ${player} did a light attack👊 and did ${damage} damage.`
+          );
+        } else if (action === "heavy") {
+          damage = Math.floor(Math.random() * 11) + 10;
+          block_damage = Math.floor(Math.random() * 10) + 1;
+          if (player == 1) {
+            player2_health -= damage;
+            player1_health -= block_damage;
+          } else {
+            player1_health -= damage;
+            player2_health -= block_damage;
+          }
+          logAction(
+            `Player ${player} did a heavy attack🩸🗡 and did ${damage} damage and received ${block_damage} block damage.`
+          );
+        } else if (action === "heal") {
+          healPoints = Math.floor(Math.random() * 6) + 5;
+          player == 1
+            ? (player1_health += healPoints)
+            : (player2_health += healPoints);
+          logAction(
+            `[+Gained 1x item: 🍎] Player ${player} ate an Apple and gained ${healPoints} health points.`
+          );
+        }
+
+        updateHealth();
+        if (player1_health <= 0 || player2_health <= 0) {
+          alert(`👑👑👑Player ${player == 1 ? 2 : 1} wins!👑👑👑`);
+          resetGame();
+        }
+      }
+
+      updateHealth();
+    </script>
+  </body>
+</html>
